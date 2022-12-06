@@ -1,0 +1,33 @@
+﻿<Page x:Class="UP03Prilutskiy.PageFolder.LibrarianFolder.AddEditionPlacePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UP03Prilutskiy.PageFolder.LibrarianFolder"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="250" d:DesignWidth="400"
+      Title="Добавление места издания">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="25"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="1" Grid.Column="1"
+                 x:Name="EditionPlaceNameTb" materialDesign:HintAssist.Hint="Название места издания"/>
+        <TextBox Grid.Row="1" Grid.Column="1"
+                 x:Name="EditionNameTb" materialDesign:HintAssist.Hint="Название издания"
+                 Visibility="Hidden" IsEnabled="False"/>
+        <Button Grid.Column="1" Grid.Row="3" Content="Добавить" Click="Button_Click"
+                x:Name="AddButton"/>
+    </Grid>
+</Page>

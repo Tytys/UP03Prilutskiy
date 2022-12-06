@@ -1,0 +1,53 @@
+﻿<Page x:Class="UP03Prilutskiy.PageFolder.ReaderFolder.AddReaderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UP03Prilutskiy.PageFolder.ReaderFolder"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="900"
+      Title="Добавить читателя"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="LastNameTb" Grid.Row="1" Grid.Column="1"
+                 materialDesign:HintAssist.Hint="Фамилия"/>
+        <TextBox x:Name="NameTb" Grid.Row="3" Grid.Column="1"
+                 materialDesign:HintAssist.Hint="Имя"/>
+        <TextBox x:Name="SecondNameTb" Grid.Row="5" Grid.Column="1"
+                 materialDesign:HintAssist.Hint="Отчество"/>
+        <ComboBox x:Name="AdressCb" Grid.Row="7" Grid.Column="1"
+                 materialDesign:HintAssist.Hint="Адресс"/>
+        <TextBox x:Name="WorkPhoneTb" Grid.Row="1" Grid.Column="3"
+                 materialDesign:HintAssist.Hint="Рабочий телефон"/>
+        <TextBox x:Name="HomePhoneTb" Grid.Row="3" Grid.Column="3"
+                 materialDesign:HintAssist.Hint="Домашний телефон"/>
+        <TextBox x:Name="DateOfBirthTb" Grid.Row="5" Grid.Column="3"
+                 materialDesign:HintAssist.Hint="Дата рождения"/>
+        <TextBox x:Name="CardNumberCb" Grid.Row="7" Grid.Column="3"
+                 materialDesign:HintAssist.Hint="Номер карты читателя"/>
+        <Button x:Name="AddButton" Grid.Column="1" Grid.Row="8"
+                Grid.ColumnSpan="3" Content="Добавить читателя"
+                Click="AddButton_Click"/>
+    </Grid>
+</Page>

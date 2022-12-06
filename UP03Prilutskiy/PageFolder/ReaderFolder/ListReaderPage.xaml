@@ -1,0 +1,65 @@
+﻿<Page x:Class="UP03Prilutskiy.PageFolder.ReaderFolder.ListReaderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UP03Prilutskiy.PageFolder.ReaderFolder"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Список книг"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="SearchTB" 
+                 materialDesign:HintAssist.Hint="Поиск"
+                 Grid.Column="0" Grid.ColumnSpan="2"
+                 TextChanged="SearchTB_TextChanged"/>
+        <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                      VerticalScrollBarVisibility="Disabled"
+                      HorizontalScrollBarVisibility="Visible">
+            <DataGrid x:Name="ListReaderDG" 
+                  Width="1500"
+                  AutoGenerateColumns="False"
+                  HorizontalScrollBarVisibility="Visible"
+                  MouseDoubleClick="ListReaderDG_MouseDoubleClick"
+                  IsReadOnly="True"
+                  >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№ п/п" Width="50"
+                                    Binding="{Binding ReaderId}"/>
+                    <DataGridTextColumn Header="ФИО" Width="180"
+                                    Binding="{Binding FIOReader}"/>
+                    <DataGridTextColumn Header="Индекс" Width="*"
+                                    Binding="{Binding IndexAdress}"/>
+                    <DataGridTextColumn Header="Регион" Width="*"
+                                    Binding="{Binding RegionName}"/>
+                    <DataGridTextColumn Header="Город" Width="*"
+                                    Binding="{Binding CityName}"/>
+                    <DataGridTextColumn Header="Улица" Width="*"
+                                    Binding="{Binding StreetName}"/>
+                    <DataGridTextColumn Header="Район" Width="*"
+                                    Binding="{Binding Frame}"/>
+                    <DataGridTextColumn Header="Этаж" Width="*"
+                                    Binding="{Binding Flat}"/>
+                    <DataGridTextColumn Header="Рабочий тел." Width="*"
+                                    Binding="{Binding ReaderWorkPhone}"/>
+                    <DataGridTextColumn Header="Домашний тел." Width="*"
+                                    Binding="{Binding ReaderHomePhone}"/>
+                    <DataGridTextColumn Header="Дата рождения" Width="*"
+                                    Binding="{Binding ReaderdateOfBirth}"/>
+                    <DataGridTextColumn Header="Номер чит. билета" Width="*"
+                                    Binding="{Binding ReaderLibraryCardNumber}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+    </Grid>
+</Page>
